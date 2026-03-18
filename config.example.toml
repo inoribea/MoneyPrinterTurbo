@@ -1,6 +1,13 @@
 [app]
 video_source = "pexels" # "pexels" or "pixabay"
 
+# 视频主题默认值（文案设置 -> 视频主题）
+# 也可通过环境变量覆盖：MTP_DEFAULT_VIDEO_SUBJECT="你的默认视频主题"
+default_video_subject = ""
+
+# 视频文案默认值（文案设置 -> 视频文案）
+default_video_script = ""
+
 # 是否隐藏配置面板
 hide_config = false
 

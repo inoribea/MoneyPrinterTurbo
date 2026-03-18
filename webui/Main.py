@@ -27,7 +27,7 @@ from app.services import task as tm
 from app.utils import utils
 
 st.set_page_config(
-    page_title="MoneyPrinterTurbo",
+    page_title="Lingine",
     page_icon="🤖",
     layout="wide",
     initial_sidebar_state="auto",
@@ -59,9 +59,9 @@ system_locale = utils.get_system_locale()
 
 
 if "video_subject" not in st.session_state:
-    st.session_state["video_subject"] = ""
+    st.session_state["video_subject"] = config.app.get("default_video_subject", "")
 if "video_script" not in st.session_state:
-    st.session_state["video_script"] = ""
+    st.session_state["video_script"] = config.app.get("default_video_script", "")
 if "video_terms" not in st.session_state:
     st.session_state["video_terms"] = ""
 if "ui_language" not in st.session_state:
@@ -74,7 +74,7 @@ locales = utils.load_locales(i18n_dir)
 title_col, lang_col = st.columns([3, 1])
 
 with title_col:
-    st.title(f"MoneyPrinterTurbo v{config.project_version}")
+    st.title("Lingine")
 
 with lang_col:
     display_languages = []

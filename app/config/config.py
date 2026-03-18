@@ -54,6 +54,11 @@ ui = _cfg.get(
     },
 )
 
+# support environment override for default video subject
+default_video_subject_env = os.getenv("MTP_DEFAULT_VIDEO_SUBJECT")
+if default_video_subject_env is not None:
+    app["default_video_subject"] = default_video_subject_env
+
 hostname = socket.gethostname()
 
 log_level = _cfg.get("log_level", "DEBUG")
